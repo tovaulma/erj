@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(user.isEmailVerified()){
                         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                         intent.putExtra("uid", user.getUid());
-                        System.out.println(user.getUid());
                         startActivity(intent);
 
                     }else{
