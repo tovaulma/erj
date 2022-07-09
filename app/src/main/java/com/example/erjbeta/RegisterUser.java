@@ -17,10 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +50,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.cancel:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.registeruser:
                 registeruser();
@@ -121,7 +118,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         //Progressbar
                                         progressBar.setVisibility(View.GONE);
                                         //redirect to login
-                                        startActivity(new Intent(RegisterUser.this, MainActivity.class));
+                                        startActivity(new Intent(RegisterUser.this, LoginActivity.class));
                                     }else{
                                         Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                         //Progressbar

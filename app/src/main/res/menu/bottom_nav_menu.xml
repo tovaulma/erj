@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item android:title="Profile"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:id="@+id/profile"
-        app:showAsAction="always"/>
-
     <item android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/home"
-        app:showAsAction="always"/>
-
+        android:id="@+id/home" />
     <item android:title="Search"
         android:icon="@drawable/ic_baseline_search_24"
-        android:id="@+id/search"
-        app:showAsAction="always"/>
-
+        android:id="@+id/search" />
+    <item android:id="@+id/placeholder"
+        android:title="" />
+    <item android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:id="@+id/profile" />
     <item android:title="Settings"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:id="@+id/settings"
-        app:showAsAction="always"/>
+        android:id="@+id/settings" />
 </menu>

@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register;
     private EditText editTextEmail;
@@ -96,19 +96,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if(user.isEmailVerified()){
-                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                         intent.putExtra("uid", user.getUid());
                         startActivity(intent);
 
                     }else{
                         user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this, "Account is not verified! Check your email to verify your account!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, "Account is not verified! Check your email to verify your account!", Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
                     }
                     //redirect to user profile
 
                 }else{
-                    Toast.makeText(MainActivity.this, "Failed to login! Please check you credentials!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Failed to login! Please check you credentials!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
